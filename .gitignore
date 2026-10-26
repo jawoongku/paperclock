@@ -1,0 +1,23 @@
+# Local SDK/JDK and device backups
+/tools/
+/backups/
+/evidence/
+/test-assets/
+
+# Build output and local signing material
+/build/
+/dist/*
+!/dist/paper-clock.apk
+!/dist/paper-clock.apk.sha256
+*.keystore
+*.jks
+*.idsig
+
+# Python/macOS/editor files
+__pycache__/
+*.py[cod]
+.DS_Store
+.idea/
+.vscode/
+.env
+.env.*
