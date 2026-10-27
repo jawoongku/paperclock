@@ -24,7 +24,7 @@ Android 4.4.2의 리디 페이퍼 프로에서 실제 동작을 확인했습니�
 
 ## 설치와 실행
 
-[설치용 APK 다운로드](https://github.com/jawoongku/paperclock/raw/refs/heads/main/dist/paper-clock.apk) · [SHA-256 확인값](dist/paper-clock.apk.sha256)
+[설치용 APK 다운로드](https://github.com/jawoongku/paperclock/releases/latest/download/paper-clock.apk) · [릴리스 목록](https://github.com/jawoongku/paperclock/releases) · [SHA-256 확인값](dist/paper-clock.apk.sha256)
 
 APK를 기기에 복사해서 열어 설치하거나, USB 디버깅을 켠 뒤 ADB로 설치할 수 있습니다. ADB를 이용할 때는 다음과 같이 실행합니다.
 
@@ -191,3 +191,15 @@ verify_device.py          # 실기기 화면 조작 검증
 ```
 
 리디 페이퍼 프로 외 기기에서는 동작을 확인하지 않았습니다. 화면은 세로 방향으로 표시하며, 기본 배치인 1404×1872를 화면 크기에 맞춰 비율을 유지해 조정합니다.
+
+## 라이선스
+
+이 프로젝트의 소스 코드와 문서, 배포 APK는 [MIT 라이선스](LICENSE)로 제공합니다.
+
+- 누구나 개인·상업적 목적으로 사용하고 수정할 수 있습니다.
+- 원본이나 수정본을 복사·재배포하거나 판매할 수 있습니다.
+- 수정한 소스 코드를 공개할 의무는 없습니다.
+- 소프트웨어를 복사하거나 재배포할 때 저작권 고지와 MIT 라이선스 고지를 유지해야 합니다.
+- 소프트웨어는 보증 없이 제공되며, 라이선스 원문에 보증 부인과 책임 제한 조항이 포함돼 있습니다.
+
+정식 조건은 저장소의 [LICENSE](LICENSE) 원문을 참고하세요. 같은 원문을 배포 APK의 `assets/LICENSE.txt`와 GitHub 릴리스 첨부 파일에도 포함합니다.

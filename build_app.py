@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build the dependency-free API 19 app with the local official SDK and JDK."""
 import os
+import hashlib
 import shutil
 import subprocess
 import zipfile
@@ -48,6 +49,7 @@ def main():
         "-I", ANDROID, "-F", BUILD / "unsigned.apk")
     with zipfile.ZipFile(BUILD / "unsigned.apk", "a", zipfile.ZIP_DEFLATED) as apk:
         apk.write(BUILD / "dex/classes.dex", "classes.dex")
+        apk.write(ROOT / "LICENSE", "assets/LICENSE.txt")
     run(SDK / "zipalign", "-f", "4", BUILD / "unsigned.apk", BUILD / "aligned.apk")
     key = BUILD / "paperclock.keystore"
     if not key.exists():
@@ -60,6 +62,8 @@ def main():
         "--out", DIST / "paper-clock.apk", BUILD / "aligned.apk")
     run(JDK / "bin/java", "-jar", SDK / "lib/apksigner.jar", "verify", "--verbose",
         "--min-sdk-version", "19", DIST / "paper-clock.apk")
+    checksum = hashlib.sha256((DIST / "paper-clock.apk").read_bytes()).hexdigest()
+    (DIST / "paper-clock.apk.sha256").write_text(checksum + "  paper-clock.apk\n")
     print("APK:", DIST / "paper-clock.apk")
 
 
